@@ -1,0 +1,31 @@
+import random
+
+def play_game():
+    number = random.randint(1,50)
+    attempts = 10
+    count = 0
+
+    print("Guess the number between 1 and 50 . You have", attempts, "chances !")
+
+    while count < attempts:
+        guess = int(input("Enter your guess: "))
+        count += 1
+
+        if guess == number:
+            print("Congratulations! You guessed it right in",count,"tries.")
+            break
+        elif guess < number:
+            print("Too low ! Try again !")
+        else:
+            print("Too high ! Try again !")
+
+        if count == attempts:
+            print("Sorry, you are out of the no. of attempts. The correct number was",number)
+
+    replay = input("Do you want to play again? (yes/no): ").strip().lower()
+    if replay == "yes":
+        play_game()
+    else:
+        print("Thanks for playing !")
+
+play_game()
