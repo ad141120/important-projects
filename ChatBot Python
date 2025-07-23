@@ -1,0 +1,157 @@
+#introduction
+import random
+print("Hi there! I'm ChatBot")
+print("What would you like to do today?")
+print("Your options are:")
+print("1. Quiz")
+print("2. Jokes")
+print("3. Rock Paper Scissors")
+print("4. Maze Game")
+ans=int(input("Type in 1, 2, 3 or 4"))
+
+if ans ==1:
+  print("Okay! Let's begin the quiz.")
+  # QUIZ
+  score=0
+  q1=input("What is the largest ocean on earth? ")
+  if q1.lower()== "pacific ocean":
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+
+  q2=input("What is the chemical formula for salt? ")
+  if q2.lower() == "nacl" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+
+  q3=input("What is the unit for distance? Type the symbol. ")
+  if q3.lower() == "m" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+    
+  q4=input("What is the capital of Spain? ")
+  if q4.lower() == "madrid" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+
+  q5=input("What is the hardest natural substance on earth? ")
+  if q5.lower() == "diamond" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+
+  q6=input("Who wrote Pride and Prejudice? ")
+  if q6.lower() == "jane austen" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+    
+  q7=input("What is the capital of Germany? ")
+  if q7.lower() == "berlin" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+    
+  q8=input("What currency is used in Japan? ")
+  if q8.lower() == "yen" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+
+  q9=input("What country is famous for its pyramids? ")
+  if q9.lower() == "egypt" :
+    print("Correct!")
+    score=score+1
+  else :
+    print("Incorrect..")
+  print("your score was", score, "/9")
+  
+elif ans==2 :
+  print("Okay! Let me tell you a few jokes.")
+  # JOKES
+  
+  jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "Why did the math book look sad? Because it had too many problems.",
+      "Why can’t your nose be 12 inches long? Because then it would be a foot.",
+      "I'm reading a book on anti-gravity. It's impossible to put down!",
+      "Why did the scarecrow win an award? Because he was outstanding in his field."
+  ]
+  print(jokes)
+  
+  
+elif ans ==3 :
+  print("Okay! Let's play Rock Paper Scissors.")
+
+  yourturn = input("enter rock paper or scissors").lower()
+  play1 = random.randint(1, 3)
+
+  if play1 == 1:
+    comp = "rock"
+  elif play1 == 2:
+    comp = "paper"
+  else:
+    comp = "scissors"
+  print("the computer's choice is", comp)
+  if yourturn == "rock" and comp == "scissors":
+    print("you won!")
+  elif yourturn == "rock" and comp == "paper":
+    print("you lost, the computer won!")
+  elif yourturn == "paper" and comp == "rock":
+    print("you won!")
+  elif yourturn == "paper" and comp == "scissors":
+    print("you lost, the computer won!")
+  elif yourturn == "scissors" and comp == "paper":
+    print("you won")
+  elif yourturn == "scissors" and comp == "rock":
+    print("you lost, the computer won!")
+  else:
+    print("its a tie")
+    
+else :
+  def startmaze():
+    while True:
+        print("Okay! Let's head into the maze")
+  
+        turn1 = input("Would you like to go left or right? ")
+  
+        if turn1.lower() == "left":
+            print("There are 3 doors - door 1 on the left, door 2 in the middle, and door 3 on the right.")
+            turn2 = input("Which one do you want to go through? Answer like 'door 1' or 'door 2': ")
+  
+            if turn2.lower() == "door 3":
+                print("Okay! There is no danger behind this door, you have reached the ocean.")
+                turn3 = input("Would you like to swim or take a boat? Type either 'swim' or 'boat': ")
+  
+                if turn3.lower() == "boat":
+                    print("Okay! You took the boat and have reached the other side of the island.")
+                    print("There is something in the sand!")
+                    print("Look! You found the treasure! ")
+                    break  
+                else:
+                    print("Oh no! The water was too deep and you couldnt swim! You didn't survive.")
+            elif turn2.lower() == "door 1":
+                print("Oh no! There was poisonous gas behind the door. You couldnt survive!")
+            else:
+                print("Oh no! There was a fire behind the door. You burned and couldnt survive!")
+  
+        else:
+            print("Oh no! You walked straight into the ocean and drowned!")
+  
+        retry = input("Do you want to try again from the start? (yes/no): ").lower()
+        if retry != "yes":
+            print("Thanks for playing!")
+            break
+  
+  startmaze()
