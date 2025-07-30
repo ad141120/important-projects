@@ -1,0 +1,33 @@
+thisdict={ 
+"abcd": 12345,
+"xyz" : 98765,
+"pqrs": 24681
+}
+tries=3
+while True :
+  ans=input("do u want to sign up or login?")
+  if ans.lower() == "sign up" :
+    username=input("enter username")
+    pwd=int(input("enter pwd (5 digit code)"))
+    thisdict[username]=pwd
+    print("you have successfully registered! welcome to the website.")
+    
+  elif ans.lower() == "login" :
+    id=input("enter username")
+    if id in thisdict.keys():
+      for i in range(3) :
+        pswd=int(input("enter ur password"))
+        if thisdict[id] == pswd :
+          print("login successful!" , "welcome, ", id)
+          break
+        else :
+          tries-=1
+          print("wrong input. you have ", tries, " tries left.")
+    else :
+      print("invalid username")
+  q=input("do u want to sign out yes/no")
+  if q.lower() == "yes" :
+    break
+  else :
+    pass
+
