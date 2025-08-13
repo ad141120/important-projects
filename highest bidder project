@@ -1,0 +1,23 @@
+bidders={}
+while True :
+  people=input("Enter a name to add to the list: ")
+  price=int(input("Add the person's bidding price:"))
+  bidders [people]= price
+  print("- - - - - - - - - - - - - - ")
+  more=input("do you want to add any more people yes/no?")
+  if more.lower() == "no" :
+    break
+  else:
+    pass
+print(bidders)
+
+def highestbid(x) :
+  hbidder=""
+  hprice= 0
+  for i in x.keys() :
+    if x[i] > hprice :
+      hbidder=i
+      hprice= x[i]
+  print("highest bidder:", hbidder, " \nhighest price:", hprice)
+
+highestbid(bidders)
