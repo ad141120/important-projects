@@ -1,0 +1,30 @@
+import random
+import time
+
+Operators=["+", "-", "*"]
+MaxOp= 8
+MinOp= 1
+TotalProb= 10
+def genproblem() :
+  operator= random.choice(Operators)
+  op1= random.randint(MinOp, MaxOp)
+  op2= random.randint(MinOp, MaxOp)
+  problem=str(op1) + " " + operator + " " + str(op2)
+  ans= eval(problem)
+  return problem, ans
+wrong=0
+input("press enter to start")
+print("- - - - - - - - - - ")
+startTime= time.time()
+for i in range(TotalProb) :
+  problem,ans= genproblem()
+  while True :
+    guess=input("Problem #" + str(i+1) + ": " + problem + "=")
+    if guess == str(ans) :
+      break
+    wrong+=1
+endTime= time.time()
+totalTime= round(endTime- startTime, 2)
+print("- - - - - - - - - - ")
+print("Congrats! You finished in", totalTime, "seconds.")
+  
